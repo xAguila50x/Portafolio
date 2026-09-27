@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Miguel Ángel González Almanza | Ingeniero en Computación</title>
+
+    <meta name="description"
+        content="Portfolio profesional de Miguel Ángel González Almanza, Ingeniero en Computación especializado en redes, ciberseguridad, software, sistemas embebidos y tecnologías cloud.">
+
+    <!-- =====================================================
+         URL BASE
+         Cámbiala si publicas en otro dominio o en otra carpeta.
+         Se usa en canonical, Open Graph y sitemap.xml
+    ====================================================== -->
+
+    <!-- https://xaquila50x.github.io/Portafolio/ -->
+
+    <meta name="theme-color" content="#050816">
+
+    <link rel="canonical"
+        href="https://xaquila50x.github.io/Portafolio/">
+
+    <!-- Compartir en redes (LinkedIn, WhatsApp, X...) -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:locale" content="es_MX">
+
+    <meta property="og:site_name"
+        content="Miguel Ángel González Almanza">
+
+    <meta property="og:url"
+        content="https://xaquila50x.github.io/Portafolio/">
+
+    <meta property="og:title"
+        content="Miguel Ángel González Almanza | Ingeniero en Computación">
+
+    <meta property="og:description"
+        content="Portafolio profesional: ciberseguridad, redes, desarrollo de software, sistemas embebidos y tecnologías cloud.">
+
+    <meta property="og:image"
+        content="https://xaquila50x.github.io/Portafolio/assets/og.jpg">
+
+    <meta property="og:image:type" content="image/jpeg">
+
+    <meta property="og:image:width" content="1200">
+
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:image:alt"
+        content="Portafolio de Miguel Ángel González Almanza, Ingeniero en Computación">
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title"
+        content="Miguel Ángel González Almanza | Ingeniero en Computación">
+
+    <meta name="twitter:description"
+        content="Portafolio profesional: ciberseguridad, redes, desarrollo de software, sistemas embebidos y tecnologías cloud.">
+
+    <meta name="twitter:image"
+        content="https://xaquila50x.github.io/Portafolio/assets/og.jpg">
+
+    <!-- Favicon inline (evita el 404 de /favicon.ico) -->
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23050816'/><text x='32' y='46' font-family='monospace' font-size='40' font-weight='700' fill='%2322d3ee' text-anchor='middle'>&lt;/&gt;</text></svg>">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Iconos -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Si el navegador tiene JavaScript desactivado, nada queda invisible -->
+
+    <noscript>
+
+        <style>
+
+            .reveal{
+
+                opacity:1 !important;
+
+                transform:none !important;
+
+            }
+
+            #cyberCursor,
+            #mouseGlow{
+
+                display:none !important;
+
+            }
+
+        </style>
+
+    </noscript>
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         EFECTOS DE FONDO
+    ====================================================== -->
+
+    <canvas id="matrixCanvas"></canvas>
+    <canvas id="networkCanvas"></canvas>
+
+    <div id="mouseGlow"></div>
+
+    <!-- Cursor personalizado -->
+    <div id="cyberCursor">
+        <span></span>
+    </div>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header id="navbar">
+
+        <div class="nav-container">
+
+            <a href="#inicio" class="logo">
+
+                <span class="logo-bracket">&lt;</span>
+
+                CV / Portafolio
+
+                <span class="logo-bracket">/&gt;</span>
+
+            </a>
+
+            <nav
+                id="navLinks"
+                aria-label="Navegación principal">
+
+                <a href="#inicio">Inicio</a>
+
+                <a href="#sobre-mi">Sobre mí</a>
+
+                <a href="#habilidades">Habilidades</a>
+
+                <a href="#formacion">Formación</a>
+
+                <a href="#certificaciones">Certificaciones</a>
+
+                <a href="#proyectos">Proyectos</a>
+
+                <a href="#contacto">Contacto</a>
+
+            </nav>
+
+            <button
+                id="menuBtn"
+                type="button"
+                aria-label="Abrir menú"
+                aria-controls="navLinks"
+                aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section id="inicio" class="hero section">
+
+            <div class="hero-grid">
+
+                <!-- TEXTO -->
+
+                <div class="hero-content reveal">
+
+                    <div class="terminal-label">
+
+                        <span class="terminal-dot"></span>
+
+                        SYSTEM ONLINE
+
+                    </div>
+
+                    <p class="hero-small">
+                        INGENIERO EN COMPUTACIÓN · UAZ
+                    </p>
+
+                    <h1>
+
+                        Miguel Ángel
+
+                        <span>González Almanza</span>
+
+                    </h1>
+
+                    <p class="hero-description">
+
+                        Ingeniero en Computación enfocado en
+
+                        <strong>ciberseguridad</strong>,
+                        <strong>redes</strong>,
+                        <strong>desarrollo de software</strong>,
+
+                        sistemas embebidos y tecnologías cloud.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="#proyectos" class="btn btn-primary">
+
+                            <i class="fa-solid fa-code"></i>
+
+                            Ver proyectos
+
+                        </a>
+
+                        <a href="#contacto" class="btn btn-secondary">
+
+                            <i class="fa-solid fa-terminal"></i>
+
+                            Contactarme
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- TERMINAL -->
+
+                    <div class="terminal-box">
+
+                        <div class="terminal-header">
+
+                            <div>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <p>miguel@portfolio:~</p>
+
+                        </div>
+
+                        <div class="terminal-body">
+
+                            <p>
+                                <span class="green">Aguila50@uaz</span>:~$
+                                <span id="terminalText"></span>
+                                <span class="terminal-cursor">█</span>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FOTO -->
+
+                <div class="hero-photo reveal">
+
+                    <div class="photo-container">
+
+                        <div class="photo-grid"></div>
+
+                        <div class="scanline"></div>
+
+                        <!-- CAMBIA ESTA FOTO -->
+                        <img src="assets/foto.webp"
+                            width="801"
+                            height="763"
+                            fetchpriority="high"
+                            decoding="async"
+                            alt="Miguel Ángel González Almanza">
+
+                        <div class="photo-overlay"></div>
+
+                        <div class="photo-code">
+
+                            <span>ACCESS_GRANTED</span>
+
+                            <span>USER: Aguila50</span>
+
+                            <span>STATUS: ONLINE</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Decoración -->
+
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SOBRE MI
+        ====================================================== -->
+
+        <section id="sobre-mi" class="section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">01</span>
+
+                    <div>
+
+                        <p>PROFILE</p>
+
+                        <h2>Sobre mí</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-text reveal">
+
+                        <p>
+
+                            Soy Ingeniero en Computación de la
+                            <strong>Universidad Autónoma de Zacatecas</strong>.
+
+                        </p>
+
+                        <p>
+
+                            Mi formación combina conocimientos de
+                            programación, arquitectura de computadoras,
+                            redes, sistemas operativos, electrónica digital,
+                            sistemas embebidos y ciberseguridad.
+
+                        </p>
+
+                        <p>
+
+                            Me interesa especialmente la creación de
+                            soluciones tecnológicas, infraestructura,
+                            seguridad informática y desarrollo de sistemas.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="stats-grid reveal">
+
+                        <div class="stat-card">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <strong>Cyber</strong>
+
+                            <span>Security</span>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <i class="fa-solid fa-network-wired"></i>
+
+                            <strong>Network</strong>
+
+                            <span>Administration</span>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <i class="fa-solid fa-microchip"></i>
+
+                            <strong>Embedded</strong>
+
+                            <span>Systems</span>
+
+                        </div>
+
+                        <div class="stat-card">
+
+                            <i class="fa-solid fa-cloud"></i>
+
+                            <strong>Cloud</strong>
+
+                            <span>Technologies</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             HABILIDADES
+        ====================================================== -->
+
+        <section id="habilidades" class="section dark-section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">02</span>
+
+                    <div>
+
+                        <p>SKILLS</p>
+
+                        <h2>Habilidades</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill-card reveal">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        <h3>Ciberseguridad</h3>
+
+                        <p>
+                            Fundamentos de seguridad informática.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>Cybersecurity</span>
+                            <span>Security</span>
+                            <span>tryhackme</span>
+                            <span>Pentesting</span>
+                            <span>Digital Forensic</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <i class="fa-solid fa-network-wired"></i>
+
+                        <h3>Redes</h3>
+
+                        <p>
+                            Diseño, configuración y administración
+                            de infraestructuras de red.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>Cisco</span>
+                            <span>Packet Tracer</span>
+                            <span>TCP/IP</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <h3>Software</h3>
+
+                        <p>
+                            Desarrollo de aplicaciones y soluciones
+                            utilizando diferentes lenguajes.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>C++</span>
+                            <span>C</span>
+                            <span>Java</span>
+                            <span>Python</span>
+                            <span>HTML</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                        <h3>Sistemas Embebidos</h3>
+
+                        <p>
+                            Desarrollo con microcontroladores,
+                            FPGA y sistemas digitales para IoT.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>Arduino</span>
+                            <span>PIC</span>
+                            <span>FPGA</span>
+                            <span>ESP32</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <i class="fa-solid fa-database"></i>
+
+                        <h3>Datos</h3>
+
+                        <p>
+                            Bases de datos, análisis de información
+                            y tecnologías de procesamiento.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>SQL</span>
+                            <span>NoSQL</span>
+                            <span>BigQuery</span>
+                            <span>Data Analysis</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <i class="fa-brands fa-linux"></i>
+
+                        <h3>Linux & Git</h3>
+
+                        <p>
+                            Manejo de sistemas Linux y control
+                            de versiones para proyectos.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>Linux</span>
+                            <span>Git</span>
+                            <span>GitHub</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FORMACION
+        ====================================================== -->
+
+        <section id="formacion" class="section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">03</span>
+
+                    <div>
+
+                        <p>EDUCATION</p>
+
+                        <h2>Formación</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline reveal">
+
+                    <div class="timeline-line"></div>
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+
+                            <span>2021 — ACTUALIDAD</span>
+
+                            <h3>Ingeniería en Computación</h3>
+
+                            <h4>Universidad Autónoma de Zacatecas</h4>
+
+                            <p>
+
+                                Formación en ciencias computacionales,
+                                arquitectura de computadoras,
+                                sistemas operativos, redes,
+                                ingeniería de software, electrónica
+                                digital y sistemas embebidos.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CERTIFICACIONES
+        ====================================================== -->
+
+        <section id="certificaciones" class="section dark-section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">04</span>
+
+                    <div>
+
+                        <p>CERTIFICATIONS</p>
+
+                        <h2>Certificaciones</h2>
+
+                    </div>
+
+                </div>
+
+
+                <!--
+                    Cada certificado puede llevar:
+
+                    1) Solo la imagen  -> se amplía al hacer clic
+                    2) Solo el enlace  -> por ejemplo Credly o Google
+                    3) Ambos          -> imagen + botón "Ver certificado"
+
+                    Para cambiar la imagen, reemplaza el src.
+                    Para poner un enlace de consulta, cambia el href="#"
+                    y BORRA aria-disabled="true".
+                -->
+
+                <div class="cert-grid">
+
+
+                    <article class="cert-card reveal">
+
+                        <div class="cert-icon">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                        </div>
+
+                        <div class="cert-content">
+
+                            <span class="cert-company">
+                                GOOGLE CLOUD
+                            </span>
+
+                            <h3>Generative AI</h3>
+
+                            <p>
+
+                                Modelos de lenguaje,
+                                inteligencia artificial generativa
+                                y soluciones cloud.
+
+                            </p>
+
+                            <button
+                                class="cert-thumb"
+                                type="button"
+                                aria-label="Ampliar el certificado de Generative AI">
+
+                                <img
+                                    src="assets/certificaciones/IA.png"
+                                    alt="Certificado de Generative AI"
+                                    width="1754"
+                                    height="1241"
+                                    loading="lazy"
+                                    decoding="async"
+                                    draggable="false">
+
+                                <span class="cert-thumb-icon" aria-hidden="true">
+
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="cert-card reveal">
+
+                        <div class="cert-icon">
+
+                            <i class="fa-solid fa-network-wired"></i>
+
+                        </div>
+
+                        <div class="cert-content">
+
+                            <span class="cert-company">
+                                CISCO
+                            </span>
+
+                            <h3>Networking Academy</h3>
+
+                            <p>
+
+                                Networking Essentials,
+                                Cybersecurity Essentials e IoT.
+
+                            </p>
+
+                            <a
+                                class="cert-link"
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-disabled="true">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Ver certificado
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="cert-card reveal">
+
+                        <div class="cert-icon">
+
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                        </div>
+
+                        <div class="cert-content">
+
+                            <span class="cert-company">
+                                CAPACÍTATE PARA EL EMPLEO
+                            </span>
+
+                            <h3>Técnico en instalación y reparación</h3>
+
+                            <p>
+
+                                Diagnóstico, mantenimiento y
+                                reparación de equipo de cómputo.
+
+                            </p>
+
+                            <button
+                                class="cert-thumb"
+                                type="button"
+                                aria-label="Ampliar el certificado de Técnico en instalación y reparación">
+
+                                <img
+                                    src="assets/certificaciones/CapacitaEmpleo.jpg"
+                                    alt="Certificado de Técnico en instalación y reparación"
+                                    width="1650"
+                                    height="1275"
+                                    loading="lazy"
+                                    decoding="async"
+                                    draggable="false">
+
+                                <span class="cert-thumb-icon" aria-hidden="true">
+
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="cert-card reveal">
+
+                        <div class="cert-icon">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                        </div>
+
+                        <div class="cert-content">
+
+                            <span class="cert-company">
+                                GOOGLE SKILLS
+                            </span>
+
+                            <h3>Google Cloud Data Analytics</h3>
+
+                            <p>
+
+                                BigQuery, análisis de datos,
+                                transformación y modelado.
+
+                            </p>
+
+                            <button
+                                class="cert-thumb"
+                                type="button"
+                                aria-label="Ampliar el certificado de Google Cloud Data Analytics">
+
+                                <img
+                                    src="assets/certificaciones/GoogleCloud.png"
+                                    alt="Certificado de Google Cloud Data Analytics"
+                                    width="600"
+                                    height="600"
+                                    loading="lazy"
+                                    decoding="async"
+                                    draggable="false">
+
+                                <span class="cert-thumb-icon" aria-hidden="true">
+
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+                                </span>
+
+                            </button>
+
+                            <a
+                                class="cert-link"
+                                href="https://www.credly.com/badges/30490360-5561-45af-af4c-4208d84298ad/linked_in_profile"
+                                target="_blank"
+                                rel="noopener noreferrer"
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Ver certificado
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="cert-card reveal">
+
+                        <div class="cert-icon">
+
+                            <i class="fa-brands fa-aws"></i>
+
+                        </div>
+
+                        <div class="cert-content">
+
+                            <span class="cert-company">
+                                AWS ACADEMY
+                            </span>
+
+                            <h3>Data Engineering</h3>
+
+                            <p>
+
+                                AWS, data pipelines,
+                                cloud y seguridad de datos.
+
+                            </p>
+
+                            <button
+                                class="cert-thumb"
+                                type="button"
+                                aria-label="Ampliar el certificado de Data Engineering">
+
+                                <img
+                                    src="assets/certificaciones/AWS.png"
+                                    alt="Certificado de Data Engineering"
+                                    width="340"
+                                    height="340"
+                                    loading="lazy"
+                                    decoding="async"
+                                    draggable="false">
+
+                                <span class="cert-thumb-icon" aria-hidden="true">
+
+                                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+
+                                </span>
+
+                            </button>
+
+                            <a
+                                class="cert-link"
+                                href="https://www.credly.com/badges/94efebf2-5816-4983-ac71-02d748f0d87c/linked_in_profile"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                Ver certificado
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PROYECTOS
+        ====================================================== -->
+
+        <section id="proyectos" class="section">
+
+            <div class="section-container">
+
+                <div class="section-heading reveal">
+
+                    <span class="section-number">05</span>
+
+                    <div>
+
+                        <p>PROJECTS</p>
+
+                        <h2>Proyectos</h2>
+
+                    </div>
+
+                </div>
+
+
+                <article class="project-card reveal">
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div class="project-content">
+
+                        <span class="project-category">
+                            COMPUTER VISION · THERMAL IMAGING
+                        </span>
+
+                        <h3>
+                            Analizador de Imágenes Térmicas
+                            para Detección de Cáncer de Mama
+                        </h3>
+
+                        <p>
+
+                            Desarrollo de una herramienta para el
+                            análisis de imágenes térmicas obtenidas
+                            mediante cámaras FLIR E6 y A300.
+
+                        </p>
+
+                        <p>
+
+                            El sistema busca analizar patrones de
+                            actividad térmica de la mama como apoyo
+                            tecnológico para la investigación y
+                            detección.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>FLIR</span>
+                            <span>Thermal Imaging</span>
+                            <span>Image Analysis</span>
+                            <span>Computer Vision</span>
+
+                        </div>
+
+                        <!-- GALERÍA DEL PROYECTO -->
+                        <div class="project-gallery">
+
+                            <div class="gallery-track">
+
+                                <div class="gallery-item">
+                                    <img loading="lazy"
+                                        decoding="async"
+                                        width="994"
+                                        height="556"
+                                        src="assets/proyectos/termicas/imagen1.jpg"
+                                        alt="Inicio Analizador de imágenes térmicas"
+                                    >
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img loading="lazy"
+                                        decoding="async"
+                                        width="1600"
+                                        height="875"
+                                        src="assets/proyectos/termicas/imagen2.jpg"
+                                        alt="Interfaz del proyecto"
+                                    >
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img loading="lazy"
+                                        decoding="async"
+                                        width="495"
+                                        height="337"
+                                        src="assets/proyectos/termicas/imagen3.jpg"
+                                        alt="Interfaz de segmentacion de imágenes térmicas"
+                                    >
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img loading="lazy"
+                                        decoding="async"
+                                        width="1600"
+                                        height="988"
+                                        src="assets/proyectos/termicas/imagen4.jpg"
+                                        alt="Análisis de imagen térmica e histograma"
+                                    >
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img loading="lazy"
+                                        decoding="async"
+                                        width="1378"
+                                        height="1084"
+                                        src="assets/proyectos/termicas/imagen5.jpg"
+                                        alt="Espectro de Fourier de la imagen térmica analizada"
+                                    >
+                                </div>
+
+                                <div class="gallery-item">
+                                    <img loading="lazy"
+                                        decoding="async"
+                                        width="733"
+                                        height="1095"
+                                        src="assets/proyectos/termicas/imagen6.jpg"
+                                        alt="Exportacion a DICOM de la imagen térmica analizada"
+                                    >
+                                </div>
+
+
+                            </div>
+
+
+                            <!-- CONTROLES DEL SLIDER -->
+
+                            <div class="gallery-controls">
+
+                                <button
+                                    class="gallery-btn"
+                                    id="galleryPrev"
+                                    type="button"
+                                    aria-label="Imagen anterior"
+                                >
+
+                                    <i class="fa-solid fa-chevron-left"></i>
+
+                                </button>
+
+                                <div
+                                    class="gallery-progress"
+                                    id="galleryProgress"
+                                    role="slider"
+                                    tabindex="0"
+                                    aria-label="Posición de la galería"
+                                    aria-valuemin="1"
+                                    aria-valuemax="6"
+                                    aria-valuenow="1"
+                                >
+
+                                    <span
+                                        class="gallery-progress-bar"
+                                        id="galleryProgressBar"
+                                    ></span>
+
+                                </div>
+
+                                <span
+                                    class="gallery-counter"
+                                    id="galleryCounter"
+                                >
+                                    01 / 06
+                                </span>
+
+                                <button
+                                    class="gallery-btn"
+                                    id="galleryNext"
+                                    type="button"
+                                    aria-label="Imagen siguiente"
+                                >
+
+                                    <i class="fa-solid fa-chevron-right"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="project-decoration">
+
+                        <i class="fa-solid fa-temperature-half"></i>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+                VISOR DE IMÁGENES
+                Navega con las flechas ← →
+            ========================================= -->
+
+            <div
+                id="imageLightbox"
+                class="image-lightbox"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Imagen ampliada">
+
+                <span
+                    class="lightbox-counter"
+                    id="lightboxCounter">
+
+                </span>
+
+                <button
+                    id="lightboxClose"
+                    class="lightbox-close"
+                    type="button"
+                    aria-label="Cerrar imagen">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+                <img
+                    id="lightboxImage"
+                    src=""
+                    alt="">
+
+                <p
+                    class="lightbox-caption"
+                    id="lightboxCaption">
+
+                </p>
+
+            </div>
+
+
+
+        <!-- =====================================================
+             VISOR DE CERTIFICADOS
+        ====================================================== -->
+
+        <div
+            id="certModal"
+            class="cert-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="certModalTitle">
+
+            <div class="cert-modal-top">
+
+                <span
+                    class="cert-modal-title"
+                    id="certModalTitle">
+
+                    Certificado
+
+                </span>
+
+                <button
+                    id="certModalClose"
+                    class="cert-btn"
+                    type="button"
+                    aria-label="Cerrar certificado">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <button
+                id="certModalPrev"
+                class="cert-btn cert-modal-prev"
+                type="button"
+                aria-label="Certificado anterior">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+            <button
+                id="certModalNext"
+                class="cert-btn cert-modal-next"
+                type="button"
+                aria-label="Certificado siguiente">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+            <div class="cert-stage" id="certStage">
+
+                <img
+                    id="certModalImage"
+                    src=""
+                    alt=""
+                    draggable="false">
+
+            </div>
+
+            <p
+                class="cert-modal-hint"
+                id="certModalHint">
+
+                Clic en la imagen para acercar
+
+            </p>
+
+            <div class="cert-zoombar">
+
+                <button
+                    id="certZoomOut"
+                    class="cert-btn"
+                    type="button"
+                    aria-label="Alejar imagen">
+
+                    <i class="fa-solid fa-minus"></i>
+
+                </button>
+
+                <span
+                    class="cert-zoom-level"
+                    id="certZoomLevel">
+
+                    Ajustar
+
+                </span>
+
+                <button
+                    id="certZoomIn"
+                    class="cert-btn"
+                    type="button"
+                    aria-label="Acercar imagen">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             CONTACTO
+        ====================================================== -->
+
+        <section id="contacto" class="section contact-section">
+
+            <div class="section-container">
+
+                <div class="contact-box reveal">
+
+                    <span class="section-number">06</span>
+
+                    <p class="contact-label">
+                        ESTABLISH CONNECTION
+                    </p>
+
+                    <h2>
+                        ¿Creamos algo?
+                    </h2>
+                    <h2>
+                        Contactame!
+                    </h2>
+
+                    <p>
+
+                        Estoy interesado en oportunidades relacionadas
+                        con tecnología, desarrollo, infraestructura,
+                        redes y ciberseguridad.
+
+                    </p>
+
+
+                    <div class="contact-links">
+
+                        <a href="mailto:miguelgon321alz@gmail.com">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            miguelgon321alz@gmail.com
+
+                        </a>
+
+                        <!--
+                            Copia el correo al portapapeles.
+                            Requiere HTTPS (en local puede no funcionar).
+                        -->
+
+                        <button
+                            class="copy-email"
+                            id="copyEmail"
+                            type="button"
+                            data-email="miguelgon321alz@gmail.com"
+                            aria-label="Copiar correo al portapapeles">
+
+                            <i class="fa-solid fa-copy"></i>
+
+                            Copiar correo
+
+                        </button>
+
+                        <a href="tel:+524921743705">
+
+                            <i class="fa-solid fa-phone"></i>
+
+                            492 174 3705
+
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/miguel-gonz%C3%A1lez-almanza-1114b634b/" target="_blank" rel="noopener noreferrer">
+
+                            <i class="fa-brands fa-linkedin"></i>
+
+                            LinkedIn
+
+                        </a>
+
+                        <a href="https://github.com/xAguila50x" target="_blank" rel="noopener noreferrer">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            GitHub
+
+                        </a>
+
+                        <!--
+                            Cuando tengas tu CV en PDF, descomenta esto
+                            y pon el archivo en assets/cv.pdf
+                            (o cambia el href por un link externo).
+                        -->
+
+                        <!--
+                        <a href="assets/cv.pdf" download>
+
+                            <i class="fa-solid fa-file-arrow-down"></i>
+
+                            Descargar CV
+
+                        </a>
+                        -->
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+
+            <span>&lt;</span>
+
+            Miguel Ángel González Almanza
+
+            <span>/&gt;</span>
+
+        </p>
+
+        <small>
+            Ingeniero en Computación · UAZ
+        </small>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
