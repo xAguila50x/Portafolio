@@ -11,27 +11,49 @@ document.addEventListener("DOMContentLoaded", () => {
         "(prefers-reduced-motion: reduce)"
     ).matches;
 
+    /* En pantallas táctiles se eliminan los efectos
+       que solo funcionan con ratón y se baja la
+       resolución de los lienzos para ahorrar batería */
+
+    const TOUCH = window.matchMedia(
+        "(hover: none), (pointer: coarse)"
+    ).matches;
+
+    const MOVIL = TOUCH || window.innerWidth <= 700;
+
     const CONFIG = {
 
         matrix: !REDUCED,
 
         network: !REDUCED,
 
-        cursor: !REDUCED,
+        cursor: !REDUCED && !TOUCH,
 
-        floatingData: !REDUCED,
+        floatingData: !REDUCED && !MOVIL,
 
         glitch: !REDUCED,
 
         terminal: true,
 
-        clickEffect: !REDUCED,
+        clickEffect: !REDUCED && !TOUCH,
 
-        tilt: !REDUCED,
+        tilt: !REDUCED && !TOUCH,
 
-        parallax: !REDUCED
+        parallax: !REDUCED && !TOUCH
 
     };
+
+
+    /* Un móvil con dpr 3 dibujaría 9 veces más
+       píxeles que uno de dpr 1 sin ganar nitidez */
+
+    const DPR_MAX = MOVIL ? 1.5 : 2;
+
+    const pixelRatio = () =>
+        Math.min(
+            window.devicePixelRatio || 1,
+            DPR_MAX
+        );
 
 
     /* Los bucles de animación se detienen
@@ -83,6 +105,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navLinks.classList.toggle("open", open);
 
+        menuBtn.classList.toggle("abierto", open);
+
         menuBtn.setAttribute(
             "aria-expanded",
             String(open)
@@ -92,10 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "aria-label",
             open ? "Cerrar menú" : "Abrir menú"
         );
-
-        menuBtn.innerHTML = open
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
 
     }
 
@@ -136,9 +156,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!navLinks.classList.contains("open")) return;
 
+        /* El camino del evento se revisa porque al
+           pulsar el botón el destino puede haber
+           cambiado dentro del mismo clic */
+
+        const ruta =
+            event.composedPath
+                ? event.composedPath()
+                : [event.target];
+
         if (
-            navLinks.contains(event.target) ||
-            menuBtn.contains(event.target)
+            ruta.includes(navLinks) ||
+            ruta.includes(menuBtn)
         ) return;
 
         setMenu(false);
@@ -434,11 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function resizeMatrix() {
 
-            const dpr =
-                Math.min(
-                    window.devicePixelRatio || 1,
-                    2
-                );
+            const dpr = pixelRatio();
 
             width = window.innerWidth;
             height = window.innerHeight;
@@ -584,11 +609,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function resizeNetwork() {
 
-            const dpr =
-                Math.min(
-                    window.devicePixelRatio || 1,
-                    2
-                );
+            const dpr = pixelRatio();
 
             width =
                 window.innerWidth;

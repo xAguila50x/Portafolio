@@ -309,6 +309,30 @@ nav a:hover{
 }
 
 
+/* El icono se cambia con una clase: reemplazar el
+   contenido del botón rompe el clic que lo abrió */
+
+#menuBtn .icono-cerrar{
+
+    display:none;
+
+}
+
+
+#menuBtn.abierto .icono-abrir{
+
+    display:none;
+
+}
+
+
+#menuBtn.abierto .icono-cerrar{
+
+    display:inline-block;
+
+}
+
+
 /* =====================================================
    SECTIONS
 ===================================================== */
@@ -659,6 +683,13 @@ nav a:hover{
    FOTO
 ===================================================== */
 
+:root{
+
+    --foto:min(400px,80vw);
+
+}
+
+
 .hero-photo{
 
     display:flex;
@@ -676,7 +707,7 @@ nav a:hover{
 
 .photo-container{
 
-    width:min(400px,80vw);
+    width:var(--foto);
 
     aspect-ratio:1;
 
@@ -865,8 +896,8 @@ nav a:hover{
 
 .orbit-1{
 
-    width:460px;
-    height:180px;
+    width:calc(var(--foto) * 1.15);
+    height:calc(var(--foto) * 0.45);
 
     transform:rotate(-30deg);
 
@@ -877,8 +908,8 @@ nav a:hover{
 
 .orbit-2{
 
-    width:500px;
-    height:210px;
+    width:calc(var(--foto) * 1.25);
+    height:calc(var(--foto) * 0.52);
 
     transform:rotate(35deg);
 
@@ -2494,19 +2525,31 @@ footer small{
 
     /* El navbar horizontal no cabe por debajo de ~840px */
 
+    /* El panel se ancla al borde inferior del
+       contenedor para no depender de la altura
+       exacta de la barra */
+
+    .nav-container{
+
+        position:relative;
+
+    }
+
     nav{
 
         position:absolute;
 
-        top:70px;
+        top:100%;
 
         left:15px;
 
         right:15px;
 
-        padding:20px;
+        padding:14px 20px;
 
         flex-direction:column;
+
+        gap:0;
 
         background:#080d1f;
 
@@ -2521,6 +2564,25 @@ footer small{
     }
 
 
+    /* Enlaces con altura suficiente para el dedo */
+
+    nav a{
+
+        padding:13px 0;
+
+        font-size:15px;
+
+        border-bottom:1px solid rgba(255,255,255,.06);
+
+    }
+
+    nav a:last-child{
+
+        border-bottom:0;
+
+    }
+
+
     nav.open{
 
         display:flex;
@@ -2530,7 +2592,9 @@ footer small{
 
     #menuBtn{
 
-        display:block;
+        display:grid;
+
+        place-items:center;
 
     }
 
@@ -2938,7 +3002,7 @@ footer small{
 
     .gallery-item {
 
-        flex: 0 0 280px;
+        flex: 0 0 min(280px,86%);
 
         height: 190px;
 
@@ -2946,17 +3010,17 @@ footer small{
 
     .gallery-btn {
 
-        width: 32px;
+        width: 44px;
 
-        height: 32px;
+        height: 44px;
 
-        font-size: 11px;
+        font-size: 14px;
 
     }
 
     .gallery-counter {
 
-        font-size: 10px;
+        font-size: 12px;
 
         min-width: 54px;
 
@@ -3126,4 +3190,147 @@ footer small{
 .image-lightbox.active .lightbox-caption {
 
     opacity: 1;
+}
+
+/* =========================================
+   AJUSTES PARA PANTALLAS TÁCTILES
+========================================= */
+
+@media (hover: none), (pointer: coarse) {
+
+    /* El halo y el cursor siguen al ratón. En un
+       dedo nunca se mueven, así que se quedan
+       clavados en una esquina sin aportar nada */
+
+    #mouseGlow,
+    #cyberCursor {
+
+        display: none;
+
+    }
+
+
+    /* Áreas táctiles: por debajo de 44 px es
+       fácil fallar el toque, y da igual el
+       ancho de la pantalla */
+
+    /* El tamaño del botón se aplica donde el
+       botón ya es visible; aquí solo importa
+       que sea cómodo de tocar */
+
+    #menuBtn {
+
+        width: 44px;
+        height: 44px;
+        margin-right: -10px;
+        font-size: 20px;
+
+    }
+
+    .logo {
+
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+
+    }
+
+    .cert-link {
+
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+
+    }
+
+    .gallery-btn {
+
+        width: 44px;
+        height: 44px;
+        font-size: 14px;
+
+    }
+
+    .cert-btn,
+    .cert-zoombar .cert-btn {
+
+        width: 44px;
+        height: 44px;
+
+    }
+
+
+    /* Los rótulos de 8 y 9 px no se leen en una
+       pantalla de móvil sin forzar la vista */
+
+    .photo-code span,
+    .skill-tags span,
+    .project-tags span,
+    .cert-company {
+
+        font-size: 11px;
+
+    }
+
+    .skill-tags span,
+    .project-tags span {
+
+        padding: 7px 10px;
+
+    }
+
+    .cert-link,
+    .project-category,
+    .terminal-header p,
+    .section-heading p,
+    .timeline-content span,
+    .cert-modal-hint,
+    .contact-label,
+    footer small {
+
+        font-size: 12px;
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    /* En un teléfono la barra del navegador roba
+       parte de la pantalla: svh evita el salto */
+
+    .hero {
+
+        min-height: 100vh;
+        min-height: 100svh;
+
+    }
+
+    /* Espacio para que las órbitas no se corten */
+
+    .hero-photo {
+
+        padding: 36px 0;
+
+    }
+
+    .gallery-item {
+
+        flex: 0 0 min(280px,86%);
+
+    }
+
+    .gallery-counter {
+
+        font-size: 12px;
+
+    }
+
+    footer small {
+
+        line-height: 1.6;
+
+    }
+
 }
